@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Digitizer_VC - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1BC4.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "C:\Program Files\VISA\winnt\include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Digitizer_VC.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\mmanalot\Desktop\N67xx Examples\CPP\digitizer\Digitizer_VC.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1BC4.tmp" 
+Creating temporary file "C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1BC5.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib visa32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/Digitizer_VC.pdb" /debug /machine:I386 /out:"Debug/Digitizer_VC.exe" /pdbtype:sept /libpath:"C:\Program Files\VISA\winnt\lib\msc" 
+".\Debug\Digitizer_VC.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1BC5.tmp"
+<h3>Output Window</h3>
+Compiling...
+Digitizer_VC.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Digitizer_VC.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

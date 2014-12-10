@@ -1,0 +1,32 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: List_VC - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1C0C.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "C:\Program Files\VISA\winnt\include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/List_VC.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\mmanalot\Desktop\N67xx Examples\CPP\list\List_VC.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1C0C.tmp" 
+Creating temporary file "C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1C0D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib visa32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/List_VC.pdb" /debug /machine:I386 /out:"Debug/List_VC.exe" /pdbtype:sept /libpath:"C:\Program Files\VISA\winnt\lib\msc" 
+".\Debug\List_VC.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\mmanalot\LOCALS~1\Temp\RSP1C0D.tmp"
+<h3>Output Window</h3>
+Compiling...
+List_VC.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+List_VC.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

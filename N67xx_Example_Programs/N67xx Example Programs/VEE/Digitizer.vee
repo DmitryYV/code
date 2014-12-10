@@ -1,0 +1,246 @@
+(saveFormat "7.0")
+(date "Wed 08/Aug/2007 16:22:07 ")
+(veerev "7.51.7801.0")
+(platform "PC")
+(execMode v6)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig
+(iodevice "PwrSupply"
+(type GPIB)
+(gateway "This host")
+(channel 7)
+(subchannel 5)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "agn6705a")
+(ppAddr "GPIB0::5::INSTR")
+(eoiEnabled 1)
+(model "agn6705a"
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(trigMode deg)
+(nextID 35)
+(popupTitleText "Untitled")
+(popupMoveable 1))
+(deviceList
+(device 8 TEXTDISPLAY
+(interface
+(input 1
+(name "Data"))))
+(device 21 LITERALCONSTANT
+(properties
+(name "Channel"))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "(@3)"))
+(initValue Text
+(data  ""))))
+(device 23 IODEVICE
+(properties
+(name "Set up Power supply")
+(description2 1 "Arm the trigger with initiate")
+(transactions 9 "WRITE TEXT \"Volt:Mode List, \", channel EOL"
+"WRITE TEXT \"Curr:Mode List,\", channel EOL"
+"WRITE TEXT \"List:Volt  \", voltPoints, \",\", channel EOL"
+"WRITE TEXT \"List:Curr \", currPoints, \",\", channel EOL"
+"WRITE TEXT \"List:Dwell  \", dwellPoints, \",\", channel EOL"
+"WRITE TEXT \"Outp ON,\", channel EOL"
+"WRITE TEXT \"Trig:Tran:Sour Bus,\", channel EOL"
+"WRITE TEXT \"Init:Tran \", channel EOL" "WRITE TEXT \"*TRG\" EOL"))
+(interface
+(input 1
+(name "channel")
+(optional yes))
+(input 2
+(name "voltPoints")
+(optional yes))
+(input 3
+(name "currPoints")
+(optional yes))
+(input 4
+(name "dwellPoints")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(device 27 IODEVICE
+(properties
+(name "Read Instrument error")
+(transactions 2 "WRITE TEXT \"Syst:Err?\" EOL" "READ TEXT ErrorMsg STR"))
+(interface
+(output 1
+(name "ErrorMsg")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(device 29 TEXTDISPLAY
+(interface
+(input 1
+(name "Data"))))
+(device 31 LITERALCONSTANT
+(properties
+(name "Voltage Points"))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "1,2,3,4,5,6,7,8,9,10"))
+(initValue Text
+(data  ""))))
+(device 32 LITERALCONSTANT
+(properties
+(name "Current Points"))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "0.5,1,1.5,2,2.5,3,3.5,4,4.5,5"))
+(initValue Text
+(data  ""))))
+(device 33 LITERALCONSTANT
+(properties
+(name "Dwell Points"))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "1,2,0.5,1,0.25,1.5,0.1,1,0.75,1.2"))
+(initValue Text
+(data  ""))))
+(device 34 IODEVICE
+(properties
+(name "Initialize Power supply()")
+(description2 3 "Set instrument to power on state"
+"Configure all channels in channel list" " 103\tVolts DC\tAuto\t4 \275 digits\t"
+)
+(transactions 4 "WRITE TEXT \"*RST\" EOL" "WRITE TEXT \"*IDN?\" EOL"
+"READ TEXT x STR" "WRITE TEXT \"*CLS\" EOL"))
+(interface
+(output 1
+(name "x")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(configuration
+(connect D8:1 D0:1)
+(connect D8:0 D2:0)
+(connect D1:1 D2:1)
+(connect D5:1 D2:2)
+(connect D6:1 D2:3)
+(connect D7:1 D2:4)
+(connect D2:0 D3:0)
+(connect D3:1 D4:1)))
+(contextCarrier
+(wndOrigin 0 0)
+(wndState res)
+(active detail)
+(detail
+(extent 1050 889)
+(anchorPt 115 -293)
+(configuration
+(devCarrierFor 8
+(active open)
+(icon)
+(open
+(extent 245 97))
+(pinCenter 600 150))
+(devCarrierFor 21
+(active open)
+(icon
+(extent 51 0))
+(open
+(extent 95 19))
+(pinCenter 0 330))
+(devCarrierFor 23
+(active open)
+(icon
+(extent 123 0)
+(iconImage "io.icn"))
+(open
+(extent 315 167))
+(terminals on)
+(pinCenter 415 420))
+(devCarrierFor 27
+(active open)
+(icon
+(extent 133 0)
+(iconImage "io.icn"))
+(open
+(extent 229 74))
+(terminals on)
+(pinCenter 220 700))
+(devCarrierFor 29
+(active open)
+(icon)
+(open
+(extent 345 57))
+(pinCenter 610 700))
+(devCarrierFor 31
+(active open)
+(icon
+(extent 86 0))
+(open
+(extent 174 29))
+(pinCenter 40 390))
+(devCarrierFor 32
+(active open)
+(icon
+(extent 86 0))
+(open
+(extent 174 29))
+(pinCenter 40 450))
+(devCarrierFor 33
+(active open)
+(icon
+(extent 75 0))
+(open
+(extent 174 29))
+(pinCenter 40 510))
+(devCarrierFor 34
+(active open)
+(icon
+(extent 141 0)
+(iconImage "io.icn"))
+(open
+(extent 265 117))
+(terminals on)
+(pinCenter 290 150))
+(connect D8:1 D0:1
+(points 2 455 150 475 150))
+(connect D8:0 D2:0
+(points 4 290 211 290 230 390 230 390 316))
+(connect D1:1 D2:1
+(points 4 50 330 150 330 150 360 175 360))
+(connect D5:1 D2:2
+(points 4 129 390 150 390 150 400 175 400))
+(connect D6:1 D2:3
+(points 4 129 450 150 450 150 440 175 440))
+(connect D7:1 D2:4
+(points 4 129 510 150 510 150 480 175 480))
+(connect D2:0 D3:0
+(points 4 390 506 390 530 240 530 240 642))
+(connect D3:1 D4:1
+(points 2 407 700 435 700)))
+(stackingOrder 0 3 4 5 6 7 1 2 8))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

@@ -1,0 +1,35 @@
+Type=Exe
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\..\..\WINDOWS\system32\stdole2.tlb#OLE Automation
+Reference=*\G{36F6E2F6-A9CE-11D4-98E5-00108301CB39}#1.0#0#..\..\..\..\..\..\..\..\..\..\Program Files\Agilent\IO Libraries Suite\bin\AgtRM.dll#Agilent VISA COM Resource Manager 1.0
+Reference=*\G{DB8CBF00-D6D3-11D4-AA51-00A024EE30BD}#1.0#0#..\..\..\..\..\..\..\..\..\..\Program Files\VISA\VisaCom\GlobMgr.dll#VISA COM 1.0 Type Library
+Form=frmList_VISACOM.frm
+Startup="frmList_VisaCom"
+HelpFile=""
+Command32=""
+Name="List_VisaCom"
+HelpContextID="0"
+CompatibleMode="0"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="Agilent Technologies"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=0
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=0
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[MS Transaction Server]
+AutoRefresh=1

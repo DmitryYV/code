@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="N67xxOutputExample">
+</Property><Property Name="Solution File" Value="C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\N67xxOutputExample.sln">
+</Property><Property Name="User Options File" Value="C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\N67xxOutputExample.suo">
+</Property><Property Name="Date" Value="20 марта 2008 г.">
+</Property><Property Name="Time" Value="15:58">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="N67xxOutputExample.sln" Description="File successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\N67xxOutputExample.sln">
+</Event><Event ErrorLevel="0" Project="" Source="N67xxOutputExample.suo" Description="File successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\N67xxOutputExample.suo">
+</Event><Event ErrorLevel="2" Project="N67xxOutputExample" Source="N67xxOutputExample.csproj" Description="Project file is not writable: C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\N67xxOutputExample.csproj">
+</Event><Event ErrorLevel="0" Project="N67xxOutputExample" Source="N67xxOutputExample.csproj" Description="Project file successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\N67xxOutputExample.csproj">
+</Event><Event ErrorLevel="0" Project="N67xxOutputExample" Source="N67xxOutputExample.csproj.user" Description="Project user file successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\N67xxOutputExample.csproj.user">
+</Event><Event ErrorLevel="0" Project="N67xxOutputExample" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="N67xxOutputExample" Source="Class1.cs" Description="File successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\Class1.cs">
+</Event><Event ErrorLevel="0" Project="N67xxOutputExample" Source="App.ico" Description="File successfully backed up as C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\Backup\App.ico">
+</Event><Event ErrorLevel="2" Project="N67xxOutputExample" Source="N67xxOutputExample.csproj" Description="Unable to save converted project file.">
+</Event><Event ErrorLevel="3" Project="N67xxOutputExample" Source="N67xxOutputExample.csproj" Description="Not Converted">
+</Event><Event ErrorLevel="2" Project="" Source="N67xxOutputExample.sln" Description="Solution file 'C:\Program Files\IVI Foundation\IVI\Drivers\AgilentN67xx\Examples\C#\N67xxOutputExample\N67xxOutputExample.sln' cannot be converted because it cannot be modified. To convert the solution, change the permissions on the solution file to allow modification and re-open it.">
+</Event><Event ErrorLevel="3" Project="" Source="N67xxOutputExample.sln" Description="Not Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,446 @@
+(saveFormat "7.0")
+(date "Mon 07/Nov/2005 12:16:45 ")
+(veerev "7.5.7714.0")
+(platform "PC")
+(execMode v6)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig)
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(assemblyRefs
+(assemblyRef 1
+(displayName
+"Agilent.AgilentN67xx.Interop, Version=1.1.0.0, Culture=neutral, PublicKeyToken=ced78d295d1e0f2b"
+)
+(libid "{98BC0F79-6862-4676-9B72-75246F5C0795}")
+(desc "IVI AgilentN67xx (Agilent Technologies) 1.1 Type Library")
+(filename "C:\\Program Files\\IVI\\Bin\\AgilentN67xx.dll")
+(verMajor 1)
+(verMinor 1)
+(lcid 0)
+(isPIA 1)
+(IAFilename
+"C:\\Program Files\\IVI\\Bin\\Primary Interop Assemblies\\Agilent.AgilentN67xx.Interop.DLL"
+))
+(assemblyRef 2
+(displayName
+"Ivi.DCPwr.Interop, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1"
+)
+(libid "{47ED5121-A398-11D4-BA58-000064657374}")
+(desc "IviDCPwr 2.0 Type Library")
+(filename "C:\\Program Files\\IVI\\Bin\\IviDCPwrTypeLib.dll")
+(verMajor 2)
+(verMinor 0)
+(lcid 0)
+(isPIA 1)
+(IAFilename
+"C:\\Program Files\\IVI\\Bin\\Primary Interop Assemblies\\Ivi.DCPwr.Interop.dll"
+))
+(assemblyRef 3
+(displayName
+"Ivi.Driver.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1"
+)
+(libid "{47ED5120-A398-11D4-BA58-000064657374}")
+(desc "IviDriver 1.0 Type Library")
+(filename "C:\\Program Files\\IVI\\Bin\\IviDriverTypeLib.dll")
+(verMajor 1)
+(verMinor 0)
+(lcid 0)
+(isPIA 1)
+(IAFilename
+"C:\\Program Files\\IVI\\Bin\\Primary Interop Assemblies\\Ivi.Driver.Interop.DLL"
+))
+(assemblyRef 4
+(displayName
+"Ivi.SessionFactory.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1"
+)
+(libid "{2730EDC0-8DB0-445B-9BD2-B031416475C3}")
+(desc "IviSessionFactory 1.0 Type Library")
+(filename "C:\\Program Files\\IVI\\Bin\\IviSessionFactory.dll")
+(verMajor 1)
+(verMinor 0)
+(lcid 0)
+(isPIA 1)
+(IAFilename
+"C:\\Program Files\\IVI\\Bin\\Primary Interop Assemblies\\Ivi.SessionFactory.Interop.DLL"
+))
+(assemblyRef 5
+(displayName
+"Ivi.Visa.Interop, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a128c98f1d7717c1"
+)
+(libid "{DB8CBF00-D6D3-11D4-AA51-00A024EE30BD}")
+(desc "VISA COM 3.0 Type Library")
+(filename "C:\\Program Files\\VISA\\VisaCom\\GlobMgr.dll")
+(verMajor 3)
+(verMinor 0)
+(lcid 0)
+(isPIA 1)
+(IAFilename
+"C:\\Program Files\\VISA\\VisaCom\\Primary Interop Assemblies\\Ivi.Visa.Interop.dll"
+))
+(selectedNamespaces
+"Agilent.AgilentN67xx.Interop,Ivi.Driver.Interop,Ivi.SessionFactory.Interop,Ivi.Visa.Interop,"
+))
+(properties
+(trigMode deg)
+(nextID 42)
+(popupTitleText "Untitled")
+(popupMoveable 1)
+(deleteGlobals 0))
+(deviceList
+(device 0 FORMULA
+(properties
+(name "CreateInstance")
+(expr 1
+"Set agilentDriverClass = CreateInstance(\"Agilent.AgilentN67xx.Interop\", \"Agilent.AgilentN67xx.Interop.AgilentN67xxClass\" );"
+))
+(interface
+(output 1
+(name "agilentDriverClass")
+(optional yes))
+(output 2
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 1 FORMULA
+(properties
+(name "agilentDriverClass.Identity.Identifier")
+(expr 2
+"Identifier = \"Identifier: \" + agilentDriverClass.Identity.Identifier;"
+"Revision = \"Revision:\" + agilentDriverClass.Identity.Revision;"))
+(interface
+(input 1
+(name "agilentDriverClass")
+(optional yes))
+(output 1
+(name "Revision")
+(optional yes))
+(output 2
+(name "Identifier")
+(optional yes))))
+(device 2 TEXTDISPLAY
+(properties
+(name "Identifier"))
+(interface
+(input 1
+(name "Data"))))
+(device 3 FORMULA
+(properties
+(name "Initialize")
+(expr 1
+"agilentDriverClass.Initialize(\"GPIB0::5::INSTR\", asVariantBool(false), asVariantBool(false), \"Simulate=false\");"
+))
+(interface
+(input 1
+(name "agilentDriverClass")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))
+(output 2
+(type exception)
+(name "Error")
+(lock name constraints)
+(optional yes))))
+(device 7 TEXTDISPLAY
+(properties
+(name "FirmwareRevision"))
+(interface
+(input 1
+(name "Data"))))
+(device 8 FORMULA
+(properties
+(name "agilentDriverClass.Close( );")
+(expr 1 "agilentDriverClass.Close( );"))
+(interface
+(input 1
+(name "agilentDriverClass")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 10 NOTE
+(properties
+(text2 1
+"{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fprq1\\fcharset0 Verdana;}{\\f1\\fnil\\fcharset0 Times New Roman;}}\r\n{\\colortbl ;\\red0\\green128\\blue0;\\red0\\green0\\blue0;}\r\n\\viewkind4\\uc1\\pard\\cf1\\f0\\fs16 \'/****************************************************************************\\par\r\n\'    Copyright \\\'a9 2003-05 Agilent Technologies Inc. All rights\\par\r\n\'    reserved.\\par\r\n\'\\par\r\n\' You have a royalty-free right to use, modify, reproduce and distribute\\par\r\n\' the Sample Application Files (and/or any modified version) in any way\\par\r\n\' you find useful, provided that you agree that Agilent has no\\par\r\n\' warranty,  obligations or liability for any Sample Application Files.\\par\r\n\'\\par\r\n\' Agilent Technologies provides programming examples for illustration only,\\par\r\n\' This sample program assumes that you are familiar with the programming\\par\r\n\' language being demonstrated and the tools used to create and debug\\par\r\n\' procedures. Agilent support engineers can help explain the\\par\r\n\' functionality of Agilent software components and associated\\par\r\n\' commands, but they will not modify these samples to provide added\\par\r\n\' functionality or construct procedures to meet your specific needs.\\par\r\n\'****************************************************************************/\\par\r\n\'/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\par\r\n\'This program executes a 3 point current and voltage list.  It also specifies\\par\r\n\'3 different dwell times.\\par\r\n\'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/\\cf2\\f1\\fs24\\par\r\n}\r\n"
+)))
+(device 11 TEXTDISPLAY
+(properties
+(name "Revision"))
+(interface
+(input 1
+(name "Data"))))
+(device 32 FORMULA
+(properties
+(name "Firmware Verison")
+(expr 1 "\"FirmwareRevision: \" + driver.Identity.InstrumentFirmwareRevision;"))
+(interface
+(input 1
+(name "driver")
+(optional yes))
+(output 1
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(device 34 ALLOCATEARRAY
+(properties
+(name "Alloc Real64"))
+(interface
+(output 1
+(name "Array")
+(tag "Array")))
+(implementation
+(numDims 1)
+(dimSizes "3")
+(type "Real64")
+(initEnum "Lin Ramp")
+(initialValue
+(data  0))
+(from 1)
+(thru 10)))
+(device 35 ALLOCATEARRAY
+(properties
+(name "Alloc Real64"))
+(interface
+(output 1
+(name "Array")
+(tag "Array")))
+(implementation
+(numDims 1)
+(dimSizes "3")
+(type "Real64")
+(initEnum "Lin Ramp")
+(initialValue
+(data  0))
+(from 0.2)
+(thru 1)))
+(device 36 ALLOCATEARRAY
+(properties
+(name "Alloc Real64"))
+(interface
+(output 1
+(name "Array")
+(tag "Array")))
+(implementation
+(numDims 1)
+(dimSizes "3")
+(type "Real64")
+(initEnum "Lin Ramp")
+(initialValue
+(data  0))
+(from 0.5)
+(thru 2)))
+(device 40 FORMULA
+(properties
+(name "IVI-COM Driver operations")
+(expr 11 "voltList = asVariant(voltList);" "currList = asVariant(currList);"
+"dwellList = asVariant(dwellList);" ""
+"driver.Transients.Item(\"Transient1\").ListPoints (ByRef voltList, ByRef currList, ByRef dwellList);"
+"" "driver.Outputs.Item(\"Output1\").Enabled = asVariantBool(TRUE);"
+"driver.Transients.Item(\"Transient1\").TrigSource = Agilent.AgilentN67xx.Interop.AgilentN67xxTriggerSourceEnum.AgilentN67xxTriggerSourceBus;"
+"driver.Transients.Item(\"Transient1\").TrigInitiate();"
+"driver.Transients.SendSoftwareTrigger();"
+"driver.Systems.WaitForOperationComplete(5000);"))
+(interface
+(input 1
+(name "driver")
+(optional yes))
+(input 2
+(name "voltList")
+(requires
+(datatype Real64))
+(optional yes))
+(input 3
+(name "currList")
+(requires
+(datatype Real64))
+(optional yes))
+(input 4
+(name "dwellList")
+(requires
+(datatype Real64))
+(optional yes))
+(output 1
+(name "voltList")
+(optional yes))
+(output 2
+(name "currList")
+(optional yes))
+(output 3
+(name "dwellList")
+(optional yes))
+(output 4
+(name "Result")
+(tag "Result")
+(lock name constraints)
+(optional yes))))
+(configuration
+(connect D0:1 D1:1)
+(connect D1:2 D2:1)
+(connect D1:0 D3:0)
+(connect D0:1 D3:1)
+(connect D8:1 D4:1)
+(connect D12:0 D5:0)
+(connect D0:1 D5:1)
+(connect D1:1 D7:1)
+(connect D3:0 D8:0)
+(connect D0:1 D8:1)
+(connect D8:0 D12:0)
+(connect D0:1 D12:1)
+(connect D9:1 D12:2)
+(connect D10:1 D12:3)
+(connect D11:1 D12:4)))
+(contextCarrier
+(wndRestoredOrigin 2 2)
+(wndRestoredExtent 528 391)
+(wndState max)
+(active detail)
+(detail
+(extent 1132 864)
+(anchorPt 218 275)
+(configuration
+(devCarrierFor 0
+(active icon)
+(icon
+(extent 94 25))
+(open
+(extent 654 86))
+(terminals on)
+(pinCenter 140 30))
+(devCarrierFor 1
+(active icon)
+(icon
+(extent 344 25))
+(open
+(extent 444 126))
+(terminals on)
+(pinCenter 410 30))
+(devCarrierFor 2
+(active open)
+(icon
+(extent 51 0))
+(open
+(extent 194 26))
+(pinCenter 790 20))
+(devCarrierFor 3
+(active icon)
+(icon
+(extent 334 25))
+(open
+(extent 524 86))
+(terminals on)
+(pinCenter 410 90))
+(devCarrierFor 7
+(active open)
+(icon
+(extent 110 0))
+(open
+(extent 194 36))
+(pinCenter 810 130))
+(devCarrierFor 8
+(active icon)
+(icon
+(extent 334 25))
+(open
+(extent 230 50))
+(terminals on)
+(pinCenter 410 240))
+(devCarrierFor 10
+(active icon)
+(icon
+(extent 68 51)
+(iconImage "notepad.icn"))
+(open
+(extent 534 346)
+(editing enabled))
+(pinCenter 330 -60))
+(devCarrierFor 11
+(active open)
+(icon
+(extent 52 0))
+(open
+(extent 194 26))
+(pinCenter 790 -40))
+(devCarrierFor 32
+(active icon)
+(icon
+(extent 334 24))
+(open
+(extent 474 86))
+(terminals on)
+(pinCenter 410 130))
+(devCarrierFor 34
+(active icon)
+(icon
+(extent 75 15))
+(open
+(extent 190 113))
+(terminals on)
+(pinCenter -120 140))
+(devCarrierFor 35
+(active icon)
+(icon
+(extent 75 15))
+(open
+(extent 190 113))
+(terminals on)
+(pinCenter -120 170))
+(devCarrierFor 36
+(active icon)
+(icon
+(extent 75 15))
+(open
+(extent 190 113))
+(terminals on)
+(pinCenter -120 200))
+(devCarrierFor 40
+(active icon)
+(icon
+(extent 334 45))
+(open
+(extent 504 216))
+(terminals on)
+(pinCenter 410 180))
+(connect D0:1 D1:1
+(points 4 189 20 210 20 210 30 235 30))
+(connect D1:2 D2:1
+(points 4 584 40 600 40 600 20 690 20))
+(connect D1:0 D3:0
+(points 2 410 45 410 75))
+(connect D0:1 D3:1
+(points 4 189 20 210 20 210 90 240 90))
+(connect D8:1 D4:1
+(points 2 579 130 710 130))
+(connect D12:0 D5:0
+(points 2 410 205 410 225))
+(connect D0:1 D5:1
+(points 4 189 20 210 20 210 240 240 240))
+(connect D1:1 D7:1
+(points 4 584 20 590 20 590 -40 690 -40))
+(connect D3:0 D8:0
+(points 2 410 105 410 115))
+(connect D0:1 D8:1
+(points 4 189 20 210 20 210 130 240 130))
+(connect D8:0 D12:0
+(points 2 410 144 410 155))
+(connect D0:1 D12:1
+(points 4 189 20 210 20 210 160 240 160))
+(connect D9:1 D12:2
+(points 4 -80 140 -50 140 -50 170 240 170))
+(connect D10:1 D12:3
+(points 4 -80 170 -60 170 -60 180 240 180))
+(connect D11:1 D12:4
+(points 4 -80 200 -60 200 -60 190 240 190)))
+(stackingOrder 6 0 7 2 4 8 10 9 11 5 12 1 3))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))

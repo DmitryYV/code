@@ -1,0 +1,246 @@
+(saveFormat "7.0")
+(date "Wed 08/Aug/2007 16:30:07 ")
+(veerev "7.51.7801.0")
+(platform "PC")
+(execMode v6)
+(filterNAN 0)
+(workspaceStackingOrder M)
+(sysconfig
+(iodevice "PwrSupply"
+(type GPIB)
+(gateway "This host")
+(channel 7)
+(subchannel 5)
+(readTerm "\n")
+(fs ",")
+(eol "\n")
+(multiField dataOnly)
+(arrayFormat linear)
+(timeout 5)
+(byteOrder 0)
+(idn "agn6705a")
+(ppAddr "GPIB0::5::INSTR")
+(eoiEnabled 1)
+(model "agn6705a"
+(standard 488))))
+(SaveCF no)
+(device 0 ROOTCONTEXT
+(properties
+(trigMode deg)
+(nextID 31)
+(popupTitleText "Untitled")
+(popupMoveable 1))
+(deviceList
+(device 8 TEXTDISPLAY
+(interface
+(input 1
+(name "Data"))))
+(device 11 IODEVICE
+(properties
+(name "Initialize Power supply()")
+(description2 3 "Set instrument to power on state"
+"Configure all channels in channel list" " 103\tVolts DC\tAuto\t4 \275 digits\t"
+)
+(transactions 3 "WRITE TEXT \"*RST\" EOL" "WRITE TEXT \"*IDN?\" EOL"
+"READ TEXT x STR"))
+(interface
+(output 1
+(name "x")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(device 21 LITERALCONSTANT
+(properties
+(name "Channel"))
+(interface
+(output 1
+(name "Text")
+(lock name constraints)))
+(implementation
+(value Text
+(data  "(@1)"))
+(initValue Text
+(data  ""))))
+(device 22 CONSTANT
+(properties
+(name "Volt"))
+(interface
+(output 1
+(name "Real64")
+(lock name constraints)))
+(implementation
+(value Real
+(data  3))
+(initValue Real
+(data  0))))
+(device 23 IODEVICE
+(properties
+(name "Set up Power supply")
+(description2 1 "Arm the trigger with initiate")
+(transactions 5 "WRITE TEXT \"Volt \", volts, \",\", channel EOL"
+"WRITE TEXT \"Volt:Prot:Lev \", overVolt, \",\", channel EOL"
+"WRITE TEXT \"Curr:Prot:Stat ON,\", channel EOL"
+"WRITE TEXT \"Curr \", current, \",\", channel EOL"
+"WRITE TEXT \"Outp ON,\", channel EOL"))
+(interface
+(input 1
+(name "channel")
+(optional yes))
+(input 2
+(name "volts")
+(optional yes))
+(input 3
+(name "overVolt")
+(optional yes))
+(input 4
+(name "current")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(device 24 CONSTANT
+(properties
+(name "overVolt"))
+(interface
+(output 1
+(name "Real64")
+(lock name constraints)))
+(implementation
+(value Real
+(data  10))
+(initValue Real
+(data  0))))
+(device 25 CONSTANT
+(properties
+(name "Current"))
+(interface
+(output 1
+(name "Real64")
+(lock name constraints)))
+(implementation
+(value Real
+(data  1.5))
+(initValue Real
+(data  0))))
+(device 27 IODEVICE
+(properties
+(name "Read Instrument error")
+(transactions 2 "WRITE TEXT \"Syst:Err?\" EOL" "READ TEXT ErrorMsg STR"))
+(interface
+(output 1
+(name "ErrorMsg")
+(optional yes)))
+(implementation
+(iopath "PwrSupply")))
+(device 29 TEXTDISPLAY
+(interface
+(input 1
+(name "Data"))))
+(configuration
+(connect D1:1 D0:1)
+(connect D1:0 D4:0)
+(connect D2:1 D4:1)
+(connect D3:1 D4:2)
+(connect D5:1 D4:3)
+(connect D6:1 D4:4)
+(connect D4:0 D7:0)
+(connect D7:1 D8:1)))
+(contextCarrier
+(wndOrigin 0 0)
+(wndState res)
+(active detail)
+(detail
+(extent 1050 889)
+(anchorPt 77 -41)
+(configuration
+(devCarrierFor 8
+(active open)
+(icon)
+(open
+(extent 245 97))
+(pinCenter 600 150))
+(devCarrierFor 11
+(active open)
+(icon
+(extent 141 0)
+(iconImage "io.icn"))
+(open
+(extent 265 117))
+(terminals on)
+(pinCenter 260 150))
+(devCarrierFor 21
+(active open)
+(icon
+(extent 51 0))
+(open
+(extent 95 19))
+(pinCenter 0 310))
+(devCarrierFor 22
+(active open)
+(icon
+(extent 24 0))
+(open
+(extent 80 29)
+(showFormat real))
+(pinCenter -10 370))
+(devCarrierFor 23
+(active open)
+(icon
+(extent 123 0)
+(iconImage "io.icn"))
+(open
+(extent 315 127))
+(terminals on)
+(pinCenter 305 400))
+(devCarrierFor 24
+(active open)
+(icon
+(extent 47 0))
+(open
+(extent 95 27)
+(showFormat real))
+(pinCenter 0 440))
+(devCarrierFor 25
+(active open)
+(icon
+(extent 45 0))
+(open
+(extent 81 29)
+(showFormat real))
+(pinCenter -10 510))
+(devCarrierFor 27
+(active open)
+(icon
+(extent 133 0)
+(iconImage "io.icn"))
+(open
+(extent 229 74))
+(terminals on)
+(pinCenter 220 630))
+(devCarrierFor 29
+(active open)
+(icon)
+(open
+(extent 345 57))
+(pinCenter 610 630))
+(connect D1:1 D0:1
+(points 2 425 150 475 150))
+(connect D1:0 D4:0
+(points 4 260 211 260 230 290 230 290 316))
+(connect D2:1 D4:1
+(points 4 50 310 70 310 70 350 85 350))
+(connect D3:1 D4:2
+(points 4 32 370 50 370 50 380 85 380))
+(connect D5:1 D4:3
+(points 6 50 440 60 440 60 430 70 430 70 410 85 410))
+(connect D6:1 D4:4
+(points 4 33 510 70 510 70 440 85 440))
+(connect D4:0 D7:0
+(points 4 290 466 290 490 240 490 240 572))
+(connect D7:1 D8:1
+(points 2 407 630 435 630)))
+(stackingOrder 7 8 0 2 3 5 6 1 4))
+(numberFormats
+(realFormat standard)
+(realSigDigits 4)
+(realRadixSpec 4)
+(integerBase decimal))))
